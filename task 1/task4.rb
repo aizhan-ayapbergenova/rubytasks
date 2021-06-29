@@ -7,24 +7,23 @@
   Если D < 0, то выводим дискриминант и сообщение "Корней нет"
 =end
 
-puts "Enter a"
+puts 'Enter a:'
 a = gets.chomp.to_f
 
-puts "Enter b"
+puts 'Enter b:'
 b = gets.chomp.to_f
 
-puts "Enter c"
+puts 'Enter c:'
 c = gets.chomp.to_f
 
-d = b**2 - 4*a*c
-
-if d < 0
-    puts "I've got no roots. The Discriminant is equal to #{d}"
-elsif d == 0
-    x = -b/(2*a)
-    puts "The Discriminant is equal to #{d}, the root is equal to #{x}"
-elsif d > 0
-    x1 = (-b - Math.sqrt(d))/(2*a)
-    x2 = (-b + Math.sqrt(d))/(2*a)
-    puts "The Discriminant is equal to #{d}, the roots are equal to #{x1} and #{x2}"
-end    
+discriminant = b**2 - 4*a*c
+if discriminant == 0
+  x = -b / ( 2 * a )
+  puts "The Discriminant is equal to #{discriminant} and the root is #{x}"
+elsif discriminant > 0
+  x1 = (-b + Math.sqrt(discriminant)) / (2 * a)
+  x2 = (-b - Math.sqrt(discriminant)) / (2 * a)
+  puts "The Discriminant is equal to #{discriminant} and the roots are #{x1} and #{x2}"
+else
+  puts "The Discriminant is equal to #{discriminant} and there are no roots"
+end   
