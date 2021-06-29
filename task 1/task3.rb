@@ -11,27 +11,23 @@
 
 side=[]
  
-puts "Enter side 1:"
+puts 'Enter side 1:'
 side << gets.chomp.to_f
 
-puts "Enter side 2:"
+puts 'Enter side 2:'
 side << gets.chomp.to_f
 
-puts "Enter side 3:"
+puts 'Enter side 3:'
 side << gets.chomp.to_f
 
 side.sort!
 
-hypotenuse = side[2]
-base2 = side[1]
-base1 = side[0]
-
-if hypotenuse**2 == base1**2 + base2**2
-    puts "This is a right triangle"
-elsif hypotenuse**2 ==base1**2 + base2**2 && base2 == base1
-    puts "This is a right and isosceles triagle"
-elsif hypotenuse == base1 && hypotenuse == base2
-    puts "This is an equilateral and isosceles triangle"
+if side[2]**2 == side[0]**2 + side[1]**2
+  puts "This is a right triangle"
+elsif side[2]**2 == side[0]**2 + side[1]**2 && side[0] == side[1]
+  puts "This is a right and isosceles triagle"
+elsif side[2] == side[1] && side[2] == side[0]
+  puts "This is an equilateral and isosceles triangle"
 else 
-    puts "This is not a right triangle"    
+  puts "This is not a right triangle"    
 end
