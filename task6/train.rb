@@ -15,7 +15,6 @@ class Train
     @speed = 0
   end
   
-  def find
 
   def increase_speed
     @speed += 10
